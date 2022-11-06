@@ -1,0 +1,167 @@
+body {
+    overflow-x: hidden;
+    
+}
+
+.img-cursos {
+    border-radius: 7px;
+}
+
+.imagem {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.conteudo {
+    border: none;
+    margin: 0px 64px;
+    padding: 0px;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column: 1 / -1;
+    place-self: center;
+}
+
+.yellow-box {
+    background-color: #FFD93B;
+    color: black;
+    padding: 20px;
+}
+
+.titulo {
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+.logo-glyph {
+    width: 20px;
+    height: 20px;
+}
+
+/* .grid {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+} */
+
+
+.imagem-curso {
+    margin: 10px;
+    padding: 10px;
+}
+
+.cursos {
+    color: #FFD93B;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 5px 0px;
+}
+
+.painel-header {
+    border-radius: 4px 4px 0px 0px;
+    text-align: center;
+}
+
+.painel-header-yellow {
+    background-color: #FFD93B;
+}
+
+.painel-body {
+    text-align: left;
+    background-color: #F2FEDC;
+    border-radius: 0px 0px 4px 4px;
+    padding: 10px;
+    margin: 0px;
+    height: 152px;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.painel-body-opacity {
+    opacity: 0.3;
+}
+
+footer {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+footer div a {
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+footer div a:hover {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+/* Teste */
+.grid {
+    display: grid;
+    grid-template-columns: auto;
+    place-content: center;
+}
+
+
+.caixa {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 350px;
+    width: 1100px;
+    place-items: center;
+    background-color: #FFD93B;
+    margin: 0px 30px;
+    border: none;
+}
+
+/* .sombra-img {
+    box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 66px 20px 0 rgba(0, 0, 0, 0.19);
+} */
+
+.block {
+    display: inline-block;
+    position: relative;
+}
+
+.block figcaption {
+    position: absolute;
+    text-align: center;
+    top: 150px;
+    font-size: 30px;
+    color: #030303;
+    text-shadow: 0px 0px 5px black;
+}
+
+
+.caixa-fig {
+    display: grid;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color: #FFD93B;
+    opacity: 0.7;
+}
+
+.caixa-fig:hover {
+    font-size: 31px;
+    background-color: #f7b80ec5;
+}
+
+/* ESTILO PARA LOGIN */
+

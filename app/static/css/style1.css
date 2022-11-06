@@ -1,0 +1,83 @@
+body {
+    overflow-x: hidden;
+}
+
+.logo {
+    border: 1px solid #ffd93b;
+    grid-row: 4;
+    width: 150px;
+    height: 150px;
+}
+
+.caixa-logo {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 200px;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-right: 0;
+    gap: 10px;
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px;
+    align-items: start;
+}
+
+.grid-fundo-black {
+    background-color: black;
+    border-radius: 5px; 
+    width: 572px;
+}
+
+.curso {
+    grid-column: 1;
+    margin-left: 60px;
+    padding: 10px;
+}
+
+.curso-titulo {
+    grid-template-rows: 100px;
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #ffd93b;
+}
+
+.detalhe {
+    grid-column: 1;
+    padding: 10px;
+    align-items: start;
+}
+
+.periodo {
+    grid-column: 1 / -1;
+    color: #ffd93b;
+}
+
+.detalhe span {
+    grid-row: 2;
+    margin-bottom: 15px;
+    font-size: large;
+}
+
+.detalhe p {
+    color: #ffd93b;
+    font-size: larger;
+    margin-bottom: 0;
+}
+
+.detalhe span {
+    color: #db9b0f;
+}
+
+.grid-row-2 {
+    grid-template-rows: 200px;
+    grid-row: 2;
+}

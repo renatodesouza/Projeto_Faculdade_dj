@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style1.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>{{ curso.nome }}</title>
+</head>
+<body style="background-color: #FFD93B;">
+    <nav class="navbar navbar-inverse" style="margin: 0; background-color: black;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color: #FFD93B; font-style: italic;" href="{% url 'app:home' %}">Faculdade</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="{% url 'app:home' %}">Home</a></li>
+              <li><a href="#">Page 1</a></li>
+              <li><a href="#">Page 2</a></li>
+              <li><a href="#">Page 3</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Matricule-se</a></li>
+              <li><a href="{% url 'app:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="jumbotron" style="margin-top: 15px; padding: 20px; background-color: black;"> 
+          <img src="{{ curso.imagem3.thumbnail.url }}" alt="{{ curso.nome }}">
+        </div>
+      </div>
+      <div class="grid">
+        
+        <div class="curso" style="background-color: black; 
+          color: #FFD93B; border-radius: 5px; font-family: Garamond; font-size: 20px;">
+          <h1>O CURSO</h1>
+          <p>{{ curso.descricao | linebreaks }}</p>
+        </div>
+        
+        <div class="grid-row grid-fundo-black">
+          <div class="curso-titulo">
+            <h1>{{ curso.nome }}</h1>
+          </div>
+          <div class="detalhe">
+            <div class="">
+              <p class="periodo">PERÍODO: </p>
+              <span class="glyphicon glyphicon-hourglass"> {{ curso.periodo }} | 08:00 às 12:00 |</span>
+            </div>
+            <div>
+              <p>DURAÇÃO:</p>
+              <span class="glyphicon glyphicon-calendar"> {{ curso.duracao }}</span>
+            </div>
+            <div>
+              <p>MODALIDADE:</p>
+              <span class="glyphicon glyphicon-user"> {{ curso.modalidade }}</span>
+            </div>
+            <!-- <div>
+              <img src="{{ curso.coordenador.imagem.thumbnail.url }}" alt="">
+            </div> -->
+            <div class="caixa-logo">
+              <img class="logo" src="{% static '/img/logo4.png' %}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding: 10px;">
+
+      </div>
+</body>
+</html>

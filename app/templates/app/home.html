@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Home</title>
+</head>
+<body style="margin: 0px; width: 100%; background-color: black;">
+  <nav class="navbar navbar-inverse" style="margin: 0px;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" style="color: #FFD93B; font-style: italic;" href="{% url 'app:home' %}">Faculdade</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Graduação<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              {% for curso in cursos %}
+              <li><a href="{% url 'app:curso' curso.id %}">{{ curso.nome }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          <li>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pós MBA<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Page 1-1</a></li>
+              <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Técnicos</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">Contato</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Matricule-se</a></li>
+          <li><a href="{% url 'app:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+      
+  <!-- JUMBOTRON INICIO -->
+  <div class="" style="margin: 0px;">
+      <img class="imagem" src="{% static '/img/vestibular.png' %}"  alt="">
+  </div>
+  <!-- JUMBOTRON FIM -->
+  <hr>
+
+  <div class="container">
+    <h2 class="cursos">Conheça nossos cursos</h2>
+      <div class="caixa">
+        {% for curso in img1 %}
+        <div class="block">
+            <img class="img-cursos" src="{{ curso.imagem2.thumbnail.url }}" alt="">
+            <figcaption class="caixa-fig">{{ curso }}</figcaption>
+        </div>
+        {% endfor %}
+      </div>
+  </div>
+  <hr>
+
+  <footer class="container">
+    <div class="col-sm-3">
+      <img class="logo" src="{% static '/img/logo4.png' %}" alt="">
+    </div>
+    <div class="info">
+      <div class="col-sm-3">
+        <div class="grid painel-header painel-header-yellow">
+          <h5>A Faculdade</h5>
+        </div>
+        <div class="painel-body">
+          <a href="">Graduação</a>
+          <a href="">Pós</a>
+          <a href="">Técnico</a>
+          <a href="">Blog</a>
+        </div>
+      </div>  
+      <div class="col-sm-3">
+        <div class="grid painel-header painel-header-yellow">
+          <h5>Contato</h5>
+        </div>
+        <div class="painel-body">
+          <p>Comercial: (00) 00000-0000</p>
+          <p>Secretaria: (00) 00000-0000</p>
+          <p>E-mail: email@email.com</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="grid painel-header painel-header-yellow">
+          <h5>Atendimento</h5>
+        </div>
+        <div class="painel-body">
+          <h5>Secretaria de Educação</h5>
+          <p>10:00 as 20:00</p>
+          <h5>Sábado</h5>
+          <p>Sem atendimento</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

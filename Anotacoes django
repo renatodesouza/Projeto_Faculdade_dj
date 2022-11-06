@@ -1,0 +1,29 @@
+from app.models.aluno import Aluno
+from app.models.matricula import Matricula
+from app.models.turma import Turma
+from app.models.atividade import Atividade
+from app.models.atividade_vinculada import AtividadeVinculada
+from app.models.curso import Curso
+from app.models.disciplina import Disciplina
+from app.models.disciplina_ofertada import DisciplinaOfertada
+
+
+Cannot resolve keyword 'turma_turma' into field. Choices are: aluno, aluno_id, curso, curso_id, dt_fim, dt_inicio, id, solicitacao_matricula, solicitacao_matricula_id, status, turma, turma_id
+
+
+
+
+Retorna o status da turma
+
+turmaA = Matricula.objects.get(turma_id=1)
+
+
+
+c = Curso.objects.get(disciplinaofertada__id=2)
+>>> print(c)
+Banco de Dados
+
+
+
+dos = DisciplinaOfertada.objects.filter(curso=c)
+>>> print(dos)
