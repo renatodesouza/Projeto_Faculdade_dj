@@ -1,17 +1,14 @@
-<!-- The Grid -->
-<div class="w3-row">
-    <!-- Left Column -->
-    <div class="w3-col m3">
+
       <!-- Profile -->
       <div class="w3-card w3-round w3-white">
         <div class="w3-container">
-         <p class="w3-center"><img src="{{ aluno.imagem.thumbnail.url }}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-         <h4 class="w3-center">{{ aluno_list.usuario.first_name }}</h4>
-         <hr>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Curso: {{ list_aluno.curso }}</p>
-         <p><i class="fa fa-users fa-fw w3-margin-right w3-text-theme"></i> Turma: {{ list_aluno.turma }}</p>
-         <p><i class="fa fa-user-circle fa-fw w3-margin-right w3-text-theme"></i> RA: {{ aluno.ra }}</p>
-         <p><i class="fa fa-id-card w3-margin-right w3-text-theme"></i>Periodo: {{ aluno_all.curso.periodo }}</p>
+          <p class="w3-center"><img src="{{ aluno.imagem.thumbnail.url }}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+          <h4 class="w3-center">{{ aluno_list.usuario.first_name }}</h4>
+          <hr>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Curso: {{ matricula_aluno.curso }}</p>
+          <p><i class="fa fa-users fa-fw w3-margin-right w3-text-theme"></i> Turma: {{ matricula_aluno.turma }}</p>
+          <p><i class="fa fa-user-circle fa-fw w3-margin-right w3-text-theme"></i> RA: {{ matricula_aluno.aluno.ra }}</p>
+          <p><i class="fa fa-id-card w3-margin-right w3-text-theme"></i>Periodo: {{ matricula_aluno.curso.periodo }}</p>
         </div>
       </div>
       <br>

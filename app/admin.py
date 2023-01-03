@@ -257,8 +257,8 @@ class PhotoAdmin(admin.ModelAdmin):
 @admin.register(Matricula)
 class Matricula(admin.ModelAdmin):
     fieldsets = [
-        ('Solicitacao',             {'fields':['solicitacao_matricula']}),
         ('Aluno',                   {'fields':['aluno']}),
+        ('Solicitacao',             {'fields':['solicitacao_matricula']}),
         ('Curso',                   {'fields':['curso']}),
         ('Turma',                   {'fields':['turma']}),
         ('Status',                  {'fields':['status']}),

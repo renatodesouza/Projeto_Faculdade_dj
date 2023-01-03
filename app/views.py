@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView, DetailView
-from app.models.disciplina_ofertada import DisciplinaOfertada
+from django.contrib.auth import authenticate, login
 
-from app.models.my_user_admin import MyUserAdmin
+from app.models.disciplina_ofertada import DisciplinaOfertada
+from app.models.mensagem import Mensagem
+
 from .models.curso import Curso
 from .models.aluno import Aluno
 from .models.matricula import Matricula
@@ -63,20 +65,22 @@ class AlunoDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(AlunoDetailView, self).get_context_data(**kwargs)
         context['aluno'] = Aluno.objects.get(usuario__email=self.user.usuario)
-        aluno = context['list_aluno'] = Matricula.objects.get(aluno__usuario=self.user.usuario) 
+        aluno = context['matricula_aluno'] = Matricula.objects.get(aluno__usuario=self.user.usuario) 
         context['disciplinas'] = DisciplinaOfertada.objects.filter(curso=aluno.curso)
 
         context['atividades_turma'] = AtividadeVinculada.objects.filter\
-        (disciplina_ofertada__turma=aluno.turma)
+        (disciplina_ofertada__turma=aluno.turma).order_by('?')[:3]
 
         context['atividades'] = AtividadeVinculada.objects.filter\
         (disciplina_ofertada__curso=aluno.curso).filter\
             (disciplina_ofertada__turma=aluno.turma).order_by('?')[:2]
 
-        context['entregas'] = EntregaAtividade.objects.filter\
-            (atividade_vinculada__disciplina_ofertada__turma=aluno.turma).order_by('?')[:2]
+        context['entregas'] = EntregaAtividade.objects.filter(aluno=aluno.id).order_by('?')[:2]
+            
 
         context['aluno_all'] = Matricula.objects.get(aluno__usuario=self.user.usuario)
+
+        context['mensagens'] = Mensagem.objects.filter(aluno__usuario=self.user.usuario)
         
         return context
 
@@ -88,3 +92,20 @@ class BoletimView(DetailView):
     def get_queryset(self):
         self.user = get_object_or_404(Aluno, pk=self.kwargs['pk'])
         return Aluno.objects.filter(id__exact=self.user.id)
+
+
+# /////////////////////////////////////////////////////////////////////////////////////
+# ///////////LOGIN////////////////
+
+def login(request):
+    username = request.POST['username']
+    password = request.POST['password']
+
+    print(username, password)
+
+    user = authenticate(request, username=username, password=password)
+
+    if user is not None:
+        login(request, user)
+        return redirect('templates/login')
+    

@@ -2,38 +2,30 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static '/css/my_style.css' %}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Login</title>
-</head>
-<body>
-    <main class="container">
-        <h2 class="gradient">Login</h2>
-        <form action="">
-            <div class="input-field">
-                <input type="text" name="username" id="username"
-                    placeholder="Enter Your Username">
-                <div class="underline"></div>
-            </div>
-            <div class="input-field">
-                <input type="password" name="password" id="password"
-                    placeholder="Enter Your Password">
-                <div class="underline"></div>
-            </div>
-
-            <input type="submit" value="Entrar"><br>
-            <a class="reset" href="">Esqueci minha senha</a>
-        </form>
-        <div class="btn-home">
-            <a class="btn" href="{% url 'app:home' %}">Home</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/style-login.css' %}">
+        <title>Login</title>
+    </head>
+<body class="w3-theme-l5">
+    <div class="grid">
+        <div class="formulario">
+            <form method="post">
+                {% csrf_token %}
+                <label for="">Username</label>
+                <input type="text" name="username">
+                <label for="">Password</label>
+                <input type="text" name="username">
+                <button type="submit">Enviar</button>
+            </form>
         </div>
-    </main>
+    </div>
 </body> 
 </html>

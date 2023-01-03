@@ -32,4 +32,4 @@ class Matricula(models.Model):
         verbose_name_plural = 'Matriculas'
 
     def __str__(self):
-        return self.status
+        return self.aluno.usuario.first_name
