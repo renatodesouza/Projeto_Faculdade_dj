@@ -139,3 +139,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 #User admin customizada
 AUTH_USER_MODEL = 'app.MyUserAdmin'
+
+LOGIN_REDIRECT_URL = 'app:home'
+LOGOUT_REDIRECT_URL = 'app/home'

@@ -1,10 +1,6 @@
-{% extends 'app/base.html' %}
+{% extends 'app/aluno.html' %}
 {% load static %}
 
-
-{% include 'app/partials/_aluno_info.html' %}
-
-
 {% block content_boletim %}
-<h1>Boletim {{ aluno_list }}</h1>
+{{ aluno_list }}
 {% endblock %}
